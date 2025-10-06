@@ -67,7 +67,7 @@ jobs:
     - name: Generate artifact attestation
       uses: actions/attest-build-provenance@v3
       with:
-        subject-name: index.docker.io/my-docker-hub-namespace/my-docker-hub-repository
+        subject-name: index.docker.io/gteella/super-pancake
         subject-digest: ${{ steps.push.outputs.digest }}
         push-to-registry: true
 
