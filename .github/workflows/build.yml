@@ -40,6 +40,7 @@ jobs:
       run: ./gradlew build
 
     - name: release
+      id: release
       run: ./gradlew release
 
     - name: Log in to Docker Hub
@@ -61,7 +62,9 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ steps.meta.outputs.tags }}
+        tags: |
+          gteella/super-pancake:v${{ steps.release.outputs.released-version }}
+          gteella/super-pancake:latest
         labels: ${{ steps.meta.outputs.labels }}
 
     - name: Generate artifact attestation
