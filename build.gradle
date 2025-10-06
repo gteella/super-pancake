@@ -17,7 +17,7 @@ java {
 
 scmVersion {
     tag {
-        prefix.set("app-")
+        prefix.set("v")
     }
     versionIncrementer('incrementMinor')
 }
